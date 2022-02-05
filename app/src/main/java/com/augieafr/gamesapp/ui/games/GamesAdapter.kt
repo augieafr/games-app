@@ -34,7 +34,7 @@ class GamesAdapter(private val listener: Listener) : RecyclerView.Adapter<GamesA
         RecyclerView.ViewHolder(binding.root) {
         fun bind(game: GameModel) {
             val name = game.name ?: "No Name"
-            val year = game.released?.take(4) ?: ""
+            val year = if (!game.released.isNullOrEmpty()) "(${game.released.take(4)})" else ""
             binding.tvName.text = itemView.context.getString(R.string.game_name, name, year)
             val backgroundUrl = game.backgroundImage ?: "null gan"
             Picasso.get()
