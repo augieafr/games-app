@@ -2,9 +2,7 @@ package com.augieafr.gamesapp.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ResultsItem(
-
-
+data class GameModel(
 	@field:SerializedName("rating")
 	val rating: Double? = null,
 
