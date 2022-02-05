@@ -1,11 +1,15 @@
 package com.augieafr.gamesapp.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 data class ResponseList(
 	@field:SerializedName("results")
 	val results: List<GameModel>? = null,
 )
+
+@Parcelize
 data class GameModel(
 	@field:SerializedName("rating")
 	val rating: Double? = null,
@@ -30,21 +34,22 @@ data class GameModel(
 
 	@field:SerializedName("description")
 	val description: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class Platform(
 
 	@field:SerializedName("image")
-	val image: Any? = null,
+	val image: String? = null,
 
 	@field:SerializedName("games_count")
 	val gamesCount: Int? = null,
 
 	@field:SerializedName("year_end")
-	val yearEnd: Any? = null,
+	val yearEnd: String? = null,
 
 	@field:SerializedName("year_start")
-	val yearStart: Any? = null,
+	val yearStart: String? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
@@ -57,23 +62,25 @@ data class Platform(
 
 	@field:SerializedName("slug")
 	val slug: String? = null
-)
+) : Parcelable
 
+@Parcelize
 data class PlatformsItem(
 
 	@field:SerializedName("requirements_ru")
-	val requirementsRu: Any? = null,
+	val requirementsRu: String? = null,
 
 	@field:SerializedName("requirements_en")
-	val requirementsEn: Any? = null,
+	val requirementsEn: String? = null,
 
 	@field:SerializedName("released_at")
 	val releasedAt: String? = null,
 
 	@field:SerializedName("platform")
 	val platform: Platform? = null
-)
+) : Parcelable
 
+@Parcelize
 data class GenresItem(
 
 	@field:SerializedName("games_count")
@@ -90,4 +97,4 @@ data class GenresItem(
 
 	@field:SerializedName("slug")
 	val slug: String? = null
-)
+) : Parcelable
