@@ -36,17 +36,13 @@ class GamesListFragment : Fragment(R.layout.fragment_games_list), GamesAdapter.L
     }
 
     private fun setUpObserver() {
-        viewModel.gameList.observe(
-            viewLifecycleOwner,
-            object : Observer<ApiResponse<List<GameModel>>> {
-                override fun onChanged(apiResponse: ApiResponse<List<GameModel>>?) {
-                    when(apiResponse){
-                        ApiResponse.Empty -> Utils.showToast(context, "Data empty")
-                        is ApiResponse.Error -> Utils.showToast(context, apiResponse.errorMessage)
-                        is ApiResponse.Success -> adapter.setData(apiResponse.data)
-                    }
+        viewModel.gameList.observe(viewLifecycleOwner) { apiResponse ->
+                when(apiResponse){
+                    ApiResponse.Empty -> Utils.showToast(context, "Data empty")
+                    is ApiResponse.Error -> Utils.showToast(context, apiResponse.errorMessage)
+                    is ApiResponse.Success -> adapter.setData(apiResponse.data)
                 }
-            })
+            }
 
         viewModel.isLoading.observe(viewLifecycleOwner){
             if (it) binding.rvGame.gone() else binding.rvGame.visible()
