@@ -22,7 +22,10 @@ data class GameModel(
 	val backgroundImage: Any? = null,
 
 	@field:SerializedName("name")
-	val name: String? = null
+	val name: String? = null,
+
+	@field:SerializedName("description")
+	val description: String? = null
 )
 
 data class Platform(
