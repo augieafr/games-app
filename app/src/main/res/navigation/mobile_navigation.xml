@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_newest">
+    <fragment
+        android:id="@+id/navigation_newest"
+        android:name="com.augieafr.gamesapp.ui.games.GamesListFragment"
+        android:label="fragment_games_newest"
+        tools:layout="@layout/fragment_games_list" >
+        <argument
+            android:name="domainType"
+            app:argType=".ui.games.GamesDomainType"
+            android:defaultValue="NEWEST_GAMES"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_popular"
+        android:name="com.augieafr.gamesapp.ui.games.GamesListFragment"
+        android:label="fragment_games_popular"
+        tools:layout="@layout/fragment_games_list" >
+        <argument
+            android:name="domainType"
+            app:argType=".ui.games.GamesDomainType"
+            android:defaultValue="POPULAR_GAMES"/>
+    </fragment>
+</navigation>

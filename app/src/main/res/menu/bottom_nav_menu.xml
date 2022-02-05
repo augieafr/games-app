@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_newest"
+        android:icon="@drawable/ic_baseline_sports_esports_24"
+        android:title="@string/newest_games" />
+
+    <item
+        android:id="@+id/navigation_popular"
+        android:icon="@drawable/ic_baseline_trending_up_24"
+        android:title="@string/popular_games" />
+</menu>
