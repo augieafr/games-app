@@ -19,7 +19,7 @@ data class GameModel(
 	val released: String? = null,
 
 	@field:SerializedName("background_image")
-	val backgroundImage: Any? = null,
+	val backgroundImage: String? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
