@@ -40,5 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+            if (destination.id == R.id.detailGameFragment) binding.navView.gone()
+            else binding.navView.visible()
+        }
     }
 }
