@@ -2,6 +2,10 @@ package com.augieafr.gamesapp.model
 
 import com.google.gson.annotations.SerializedName
 
+data class ResponseList(
+	@field:SerializedName("results")
+	val results: List<GameModel>? = null,
+)
 data class GameModel(
 	@field:SerializedName("rating")
 	val rating: Double? = null,
@@ -19,7 +23,7 @@ data class GameModel(
 	val released: String? = null,
 
 	@field:SerializedName("background_image")
-	val backgroundImage: String? = null,
+	var backgroundImage: String? = null,
 
 	@field:SerializedName("name")
 	val name: String? = null,
