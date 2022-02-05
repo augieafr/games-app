@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.augieafr.gamesapp.R
 import com.augieafr.gamesapp.data.ApiResponse
@@ -59,7 +60,9 @@ class GamesListFragment : Fragment(R.layout.fragment_games_list), GamesAdapter.L
         rvGame.adapter = adapter
     }
 
-    override fun onItemClick(gameId: Int) {
-        TODO("Go to detail")
+    override fun onItemClick(gameId: Int?) {
+        val bundle = Bundle()
+        bundle.putInt(DetailGameFragment.ID_KEY, gameId ?: 0)
+        findNavController().navigate(R.id.action_navigation_newest_to_detailGameFragment, bundle)
     }
 }

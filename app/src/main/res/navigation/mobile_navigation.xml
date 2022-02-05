@@ -13,6 +13,9 @@
             android:name="domainType"
             app:argType=".ui.games.GamesDomainType"
             android:defaultValue="NEWEST_GAMES"/>
+        <action
+            android:id="@+id/action_navigation_newest_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
     </fragment>
 
     <fragment
@@ -24,5 +27,13 @@
             android:name="domainType"
             app:argType=".ui.games.GamesDomainType"
             android:defaultValue="POPULAR_GAMES"/>
+        <action
+            android:id="@id/action_navigation_newest_to_detailGameFragment"
+            app:destination="@id/detailGameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/detailGameFragment"
+        android:name="com.augieafr.gamesapp.ui.games.DetailGameFragment"
+        android:label="fragment_detail_game"
+        tools:layout="@layout/fragment_detail_game" />
 </navigation>

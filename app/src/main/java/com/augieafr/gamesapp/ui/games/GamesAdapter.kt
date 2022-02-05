@@ -39,10 +39,14 @@ class GamesAdapter(private val listener: Listener) : RecyclerView.Adapter<GamesA
                 .load(backgroundUrl)
                 .error(R.drawable.ic_baseline_broken_image_24)
                 .into(binding.imgBackground)
+
+            binding.root.setOnClickListener{
+                listener.onItemClick(game.id)
+            }
         }
     }
 
     interface Listener {
-        fun onItemClick(gameId: Int)
+        fun onItemClick(gameId: Int?)
     }
 }
